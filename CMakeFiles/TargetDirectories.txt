@@ -1,0 +1,5 @@
+/home/cian/传感器_豆包/sensor_viz/CMakeFiles/SensorViz.dir
+/home/cian/传感器_豆包/sensor_viz/CMakeFiles/edit_cache.dir
+/home/cian/传感器_豆包/sensor_viz/CMakeFiles/rebuild_cache.dir
+/home/cian/传感器_豆包/sensor_viz/CMakeFiles/SensorViz_autogen_timestamp_deps.dir
+/home/cian/传感器_豆包/sensor_viz/CMakeFiles/SensorViz_autogen.dir
