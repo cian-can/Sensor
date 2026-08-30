@@ -54,16 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cian/传感器_豆包/sensor_viz
+CMAKE_SOURCE_DIR = /home/cian/传感器_豆包/Sensor/Sensor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cian/传感器_豆包/sensor_viz
+CMAKE_BINARY_DIR = /home/cian/传感器_豆包/Sensor/Sensor
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/SensorViz.dir/all
+all: CMakeFiles/Sensor.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,89 +71,89 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/SensorViz.dir/clean
-clean: CMakeFiles/SensorViz_autogen_timestamp_deps.dir/clean
-clean: CMakeFiles/SensorViz_autogen.dir/clean
+clean: CMakeFiles/Sensor.dir/clean
+clean: CMakeFiles/Sensor_autogen_timestamp_deps.dir/clean
+clean: CMakeFiles/Sensor_autogen.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/SensorViz.dir
+# Target rules for target CMakeFiles/Sensor.dir
 
 # All Build rule for target.
-CMakeFiles/SensorViz.dir/all: CMakeFiles/SensorViz_autogen_timestamp_deps.dir/all
-CMakeFiles/SensorViz.dir/all: CMakeFiles/SensorViz_autogen.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz.dir/build.make CMakeFiles/SensorViz.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz.dir/build.make CMakeFiles/SensorViz.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cian/传感器_豆包/sensor_viz/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target SensorViz"
-.PHONY : CMakeFiles/SensorViz.dir/all
+CMakeFiles/Sensor.dir/all: CMakeFiles/Sensor_autogen_timestamp_deps.dir/all
+CMakeFiles/Sensor.dir/all: CMakeFiles/Sensor_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target Sensor"
+.PHONY : CMakeFiles/Sensor.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/SensorViz.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/sensor_viz/CMakeFiles 14
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SensorViz.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/sensor_viz/CMakeFiles 0
-.PHONY : CMakeFiles/SensorViz.dir/rule
+CMakeFiles/Sensor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles 14
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Sensor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles 0
+.PHONY : CMakeFiles/Sensor.dir/rule
 
 # Convenience name for target.
-SensorViz: CMakeFiles/SensorViz.dir/rule
-.PHONY : SensorViz
+Sensor: CMakeFiles/Sensor.dir/rule
+.PHONY : Sensor
 
 # clean rule for target.
-CMakeFiles/SensorViz.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz.dir/build.make CMakeFiles/SensorViz.dir/clean
-.PHONY : CMakeFiles/SensorViz.dir/clean
+CMakeFiles/Sensor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/clean
+.PHONY : CMakeFiles/Sensor.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/SensorViz_autogen_timestamp_deps.dir
+# Target rules for target CMakeFiles/Sensor_autogen_timestamp_deps.dir
 
 # All Build rule for target.
-CMakeFiles/SensorViz_autogen_timestamp_deps.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz_autogen_timestamp_deps.dir/build.make CMakeFiles/SensorViz_autogen_timestamp_deps.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz_autogen_timestamp_deps.dir/build.make CMakeFiles/SensorViz_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cian/传感器_豆包/sensor_viz/CMakeFiles --progress-num= "Built target SensorViz_autogen_timestamp_deps"
-.PHONY : CMakeFiles/SensorViz_autogen_timestamp_deps.dir/all
+CMakeFiles/Sensor_autogen_timestamp_deps.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen_timestamp_deps.dir/build.make CMakeFiles/Sensor_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen_timestamp_deps.dir/build.make CMakeFiles/Sensor_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles --progress-num= "Built target Sensor_autogen_timestamp_deps"
+.PHONY : CMakeFiles/Sensor_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/SensorViz_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/sensor_viz/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SensorViz_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/sensor_viz/CMakeFiles 0
-.PHONY : CMakeFiles/SensorViz_autogen_timestamp_deps.dir/rule
+CMakeFiles/Sensor_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Sensor_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles 0
+.PHONY : CMakeFiles/Sensor_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
-SensorViz_autogen_timestamp_deps: CMakeFiles/SensorViz_autogen_timestamp_deps.dir/rule
-.PHONY : SensorViz_autogen_timestamp_deps
+Sensor_autogen_timestamp_deps: CMakeFiles/Sensor_autogen_timestamp_deps.dir/rule
+.PHONY : Sensor_autogen_timestamp_deps
 
 # clean rule for target.
-CMakeFiles/SensorViz_autogen_timestamp_deps.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz_autogen_timestamp_deps.dir/build.make CMakeFiles/SensorViz_autogen_timestamp_deps.dir/clean
-.PHONY : CMakeFiles/SensorViz_autogen_timestamp_deps.dir/clean
+CMakeFiles/Sensor_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen_timestamp_deps.dir/build.make CMakeFiles/Sensor_autogen_timestamp_deps.dir/clean
+.PHONY : CMakeFiles/Sensor_autogen_timestamp_deps.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/SensorViz_autogen.dir
+# Target rules for target CMakeFiles/Sensor_autogen.dir
 
 # All Build rule for target.
-CMakeFiles/SensorViz_autogen.dir/all: CMakeFiles/SensorViz_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz_autogen.dir/build.make CMakeFiles/SensorViz_autogen.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz_autogen.dir/build.make CMakeFiles/SensorViz_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cian/传感器_豆包/sensor_viz/CMakeFiles --progress-num=14 "Built target SensorViz_autogen"
-.PHONY : CMakeFiles/SensorViz_autogen.dir/all
+CMakeFiles/Sensor_autogen.dir/all: CMakeFiles/Sensor_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen.dir/build.make CMakeFiles/Sensor_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen.dir/build.make CMakeFiles/Sensor_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles --progress-num=14 "Built target Sensor_autogen"
+.PHONY : CMakeFiles/Sensor_autogen.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/SensorViz_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/sensor_viz/CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SensorViz_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/sensor_viz/CMakeFiles 0
-.PHONY : CMakeFiles/SensorViz_autogen.dir/rule
+CMakeFiles/Sensor_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Sensor_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cian/传感器_豆包/Sensor/Sensor/CMakeFiles 0
+.PHONY : CMakeFiles/Sensor_autogen.dir/rule
 
 # Convenience name for target.
-SensorViz_autogen: CMakeFiles/SensorViz_autogen.dir/rule
-.PHONY : SensorViz_autogen
+Sensor_autogen: CMakeFiles/Sensor_autogen.dir/rule
+.PHONY : Sensor_autogen
 
 # clean rule for target.
-CMakeFiles/SensorViz_autogen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SensorViz_autogen.dir/build.make CMakeFiles/SensorViz_autogen.dir/clean
-.PHONY : CMakeFiles/SensorViz_autogen.dir/clean
+CMakeFiles/Sensor_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen.dir/build.make CMakeFiles/Sensor_autogen.dir/clean
+.PHONY : CMakeFiles/Sensor_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
