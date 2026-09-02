@@ -19,6 +19,8 @@ class QValueAxis;
 
 namespace sensor {
 
+class CameraManager;  // 前向声明
+
 // ========== 主窗口（UI可视化层） ==========
 // 对应文档2.2.1: 仅运行于Qt主线程，实时曲线、数字仪表盘、设备状态、告警展示
 // 对应文档3.4.1: 帧率限制(30FPS)、滑动窗口、算力隔离
@@ -28,8 +30,9 @@ public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow() override;
 
-    // 初始化（注入采集管理器和存储）
-    void setup(AcquisitionManager* acquisition, SqliteStorage* storage);
+    // 初始化（注入采集管理器、存储、相机管理器）
+    void setup(AcquisitionManager* acquisition, SqliteStorage* storage,
+               CameraManager* camera = nullptr);
 
 protected:
     void closeEvent(QCloseEvent* event) override;
@@ -43,6 +46,12 @@ private slots:
     void onStatsUpdated(uint64_t total, uint64_t dropped);
     void onUiRefresh();  // 30FPS UI刷新定时器
 
+    // 相机相关槽
+    void onCaptureClicked();
+    void onPhotoCaptured(const QString& filePath, const QString& timestamp);
+    void onCameraStatusChanged(bool available);
+    void onCameraStatsUpdated(int totalPhotos, const QString& lastCapture);
+
 private:
     void setupUi();
     void setupChart();
@@ -54,13 +63,20 @@ private:
     // 核心组件
     AcquisitionManager* acquisition_ = nullptr;
     SqliteStorage*      storage_ = nullptr;
+    CameraManager*      camera_ = nullptr;
 
     // UI控件
     QPushButton* startBtn_ = nullptr;
     QPushButton* stopBtn_  = nullptr;
+    QPushButton* captureBtn_ = nullptr;  // 立即拍照
     QLabel*      statusIndicator_ = nullptr;
     QLabel*      statusText_ = nullptr;
     QLabel*      statsLabel_ = nullptr;
+
+    // 相机状态面板
+    QLabel* cameraStatusLabel_ = nullptr;
+    QLabel* lastCaptureLabel_ = nullptr;
+    QLabel* photoCountLabel_ = nullptr;
 
     QLabel* tempValueLabel_ = nullptr;
     QLabel* pressureValueLabel_ = nullptr;

@@ -39,9 +39,17 @@ struct AppConfig {
 
     // 日志
     std::string logLevel = "info";
-    std::string logFile = "sensor_viz.log";
+    std::string logFile = "forest_breed.log";
     int  logMaxSize = 10;   // MB
     int  logMaxFiles = 5;
+
+    // 相机
+    bool        cameraEnabled = true;
+    int         cameraDeviceIndex = 0;
+    int         cameraIntervalHours = 2;   // 拍照间隔（小时）
+    int         cameraRetentionDays = 30;  // 照片保留天数
+    std::string cameraPhotoDir = "photos";
+    int         cameraQuality = 90;
 };
 
 class Config {

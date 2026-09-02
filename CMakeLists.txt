@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(Sensor VERSION 1.0.0 LANGUAGES CXX)
+project(ForestBreedMonitor VERSION 1.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -12,6 +12,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Charts Core)
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(SQLite3 REQUIRED)
 find_package(spdlog REQUIRED)
+find_package(OpenCV REQUIRED)
 
 # ========== 源文件分组 ==========
 set(COMMON_SOURCES
@@ -37,6 +38,10 @@ set(STORAGE_SOURCES
     src/storage/SqliteStorage.cpp
 )
 
+set(CAMERA_SOURCES
+    src/camera/CameraManager.cpp
+)
+
 set(UI_SOURCES
     src/ui/MainWindow.cpp
 )
@@ -48,6 +53,7 @@ set(ALL_SOURCES
     ${NET_SOURCES}
     ${BUSINESS_SOURCES}
     ${STORAGE_SOURCES}
+    ${CAMERA_SOURCES}
     ${UI_SOURCES}
 )
 
@@ -57,6 +63,7 @@ add_executable(${PROJECT_NAME} ${ALL_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src
     ${Boost_INCLUDE_DIRS}
+    ${OpenCV_INCLUDE_DIRS}
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
@@ -66,6 +73,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Boost::system
     SQLite::SQLite3
     spdlog::spdlog
+    ${OpenCV_LIBS}
     pthread
 )
 

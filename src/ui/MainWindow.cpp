@@ -1,5 +1,6 @@
 #include "ui/MainWindow.h"
 #include "common/Config.h"
+#include "camera/CameraManager.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGridLayout>
@@ -32,9 +33,11 @@ MainWindow::MainWindow(QWidget* parent)
 
 MainWindow::~MainWindow() = default;
 
-void MainWindow::setup(AcquisitionManager* acquisition, SqliteStorage* storage) {
+void MainWindow::setup(AcquisitionManager* acquisition, SqliteStorage* storage,
+                        CameraManager* camera) {
     acquisition_ = acquisition;
     storage_ = storage;
+    camera_ = camera;
 
     // 采集管理器信号 → 本窗口
     connect(acquisition_, &AcquisitionManager::dataReady,
@@ -51,10 +54,24 @@ void MainWindow::setup(AcquisitionManager* acquisition, SqliteStorage* storage) 
             storage_, &SqliteStorage::writeAsync, Qt::QueuedConnection);
 
     maxPoints_ = Config::instance().maxPoints;
+
+    // 相机信号连接
+    if (camera_) {
+        connect(camera_, &CameraManager::photoCaptured,
+                this, &MainWindow::onPhotoCaptured, Qt::QueuedConnection);
+        connect(camera_, &CameraManager::cameraStatusChanged,
+                this, &MainWindow::onCameraStatusChanged, Qt::QueuedConnection);
+        connect(camera_, &CameraManager::cameraStatsUpdated,
+                this, &MainWindow::onCameraStatsUpdated, Qt::QueuedConnection);
+
+        // 初始化相机状态显示
+        onCameraStatusChanged(camera_->isCameraAvailable());
+        onCameraStatsUpdated(camera_->photoCount(), camera_->lastCaptureTime());
+    }
 }
 
 void MainWindow::setupUi() {
-    setWindowTitle("远程传感器数据采集及可视化系统");
+    setWindowTitle("林育环境监测系统 - 中南林业科技大学实验室育种环境监控平台");
     resize(1280, 800);
 
     // ===== 工具栏 =====
@@ -74,8 +91,17 @@ void MainWindow::setupUi() {
     connect(startBtn_, &QPushButton::clicked, this, &MainWindow::onStartClicked);
     connect(stopBtn_, &QPushButton::clicked, this, &MainWindow::onStopClicked);
 
+    // 立即拍照按钮
+    captureBtn_ = new QPushButton("立即拍照", this);
+    captureBtn_->setStyleSheet("QPushButton{background:#3498db;color:white;padding:6px 16px;border-radius:4px;font-weight:bold;}"
+                                "QPushButton:hover{background:#5dade2;}"
+                                "QPushButton:disabled{background:#bdc3c7;}");
+    connect(captureBtn_, &QPushButton::clicked, this, &MainWindow::onCaptureClicked);
+
     toolBar->addWidget(startBtn_);
     toolBar->addWidget(stopBtn_);
+    toolBar->addSeparator();
+    toolBar->addWidget(captureBtn_);
     toolBar->addSeparator();
 
     // 状态指示灯
@@ -151,6 +177,17 @@ void MainWindow::setupUi() {
     // ===== 状态栏 =====
     statsLabel_ = new QLabel("帧数: 0 | 丢弃: 0 | 已存储: 0", this);
     statusBar()->addWidget(statsLabel_);
+
+    // 相机状态（状态栏右侧）
+    cameraStatusLabel_ = new QLabel("相机: --", this);
+    cameraStatusLabel_->setStyleSheet("margin-left:20px;color:#7f8c8d;");
+    lastCaptureLabel_ = new QLabel("最近拍照: --", this);
+    lastCaptureLabel_->setStyleSheet("margin-left:15px;color:#7f8c8d;");
+    photoCountLabel_ = new QLabel("照片: 0", this);
+    photoCountLabel_->setStyleSheet("margin-left:15px;color:#7f8c8d;");
+    statusBar()->addPermanentWidget(cameraStatusLabel_);
+    statusBar()->addPermanentWidget(lastCaptureLabel_);
+    statusBar()->addPermanentWidget(photoCountLabel_);
 
     // ===== UI刷新定时器 (30FPS) =====
     uiTimer_ = new QTimer(this);
@@ -354,7 +391,52 @@ void MainWindow::closeEvent(QCloseEvent* event) {
     if (storage_ && storage_->isRunning()) {
         storage_->stop();
     }
+    if (camera_ && camera_->isEnabled()) {
+        camera_->stop();
+    }
     event->accept();
+}
+
+// ==================== 相机相关槽函数 ====================
+
+void MainWindow::onCaptureClicked() {
+    if (!camera_) {
+        spdlog::warn("相机管理器未初始化");
+        return;
+    }
+    if (!camera_->isEnabled()) {
+        spdlog::warn("相机功能未启用");
+        return;
+    }
+    spdlog::info("用户点击立即拍照");
+    camera_->captureNow();
+}
+
+void MainWindow::onPhotoCaptured(const QString& filePath, const QString& timestamp) {
+    spdlog::info("拍照成功: {} ({})", filePath.toStdString(), timestamp.toStdString());
+    lastCaptureLabel_->setText("最近拍照: " + timestamp);
+    // 状态栏临时提示
+    statusBar()->showMessage("拍照成功: " + filePath, 5000);
+}
+
+void MainWindow::onCameraStatusChanged(bool available) {
+    if (available) {
+        cameraStatusLabel_->setText("相机: 已连接");
+        cameraStatusLabel_->setStyleSheet("margin-left:20px;color:#27ae60;font-weight:bold;");
+        captureBtn_->setEnabled(true);
+    } else {
+        cameraStatusLabel_->setText("相机: 未连接");
+        cameraStatusLabel_->setStyleSheet("margin-left:20px;color:#e74c3c;font-weight:bold;");
+        // 未连接时仍允许点击（会尝试重新打开）
+        captureBtn_->setEnabled(true);
+    }
+}
+
+void MainWindow::onCameraStatsUpdated(int totalPhotos, const QString& lastCapture) {
+    photoCountLabel_->setText(QString("照片: %1").arg(totalPhotos));
+    if (!lastCapture.isEmpty() && lastCapture != "尚未拍照") {
+        lastCaptureLabel_->setText("最近拍照: " + lastCapture);
+    }
 }
 
 } // namespace sensor

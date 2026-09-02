@@ -1,13 +1,16 @@
 // ============================================================
-// 远程传感器数据采集及可视化程序 - 程序入口
-// 技术栈: C++17 + Boost.Asio + Qt6 + Qt Charts + SQLite3 + spdlog
+// 林育环境监测系统 - 程序入口
+// 中南林业科技大学 · 实验室育种环境监控平台
+// 技术栈: C++17 + Boost.Asio + Qt6 + Qt Charts + SQLite3 + spdlog + OpenCV
 // 架构: 五层分层 (UI → Business → Net → Protocol → Storage/Common)
+//       + 相机定时拍照模块 (OpenCV)
 // ============================================================
 
 #include "common/Config.h"
 #include "common/Logger.h"
 #include "business/AcquisitionManager.h"
 #include "storage/SqliteStorage.h"
+#include "camera/CameraManager.h"
 #include "ui/MainWindow.h"
 
 #include <QApplication>
@@ -19,9 +22,10 @@
 int main(int argc, char* argv[]) {
     // ===== 1. Qt 应用初始化 =====
     QApplication app(argc, argv);
-    QApplication::setApplicationName("SensorViz");
-    QApplication::setApplicationVersion("1.0.0");
-    QApplication::setOrganizationName("SensorViz");
+    QApplication::setApplicationName("ForestBreedMonitor");
+    QApplication::setApplicationDisplayName("林育环境监测系统");
+    QApplication::setApplicationVersion("1.1.0");
+    QApplication::setOrganizationName("CSUFT");
 
     // 确定配置文件路径（优先命令行参数，其次当前目录）
     QString configPath = QDir::currentPath() + "/config.ini";
@@ -38,12 +42,18 @@ int main(int argc, char* argv[]) {
                          cfg.logMaxSize, cfg.logMaxFiles);
 
     spdlog::info("========================================");
-    spdlog::info("远程传感器数据采集及可视化系统启动");
+    spdlog::info("林育环境监测系统启动");
+    spdlog::info("中南林业科技大学 - 实验室育种环境监控平台");
     spdlog::info("配置文件: {}", configPath.toStdString());
     spdlog::info("目标设备: {}:{}", cfg.host, cfg.port);
     spdlog::info("模拟模式: {}", cfg.mockSensor ? "开启" : "关闭");
     spdlog::info("采样率: {}Hz", cfg.sampleRate);
     spdlog::info("UI刷新: {}FPS", cfg.refreshFps);
+    spdlog::info("相机定时拍照: {}", cfg.cameraEnabled ? "开启" : "关闭");
+    if (cfg.cameraEnabled) {
+        spdlog::info("拍照间隔: {}小时, 保留: {}天, 目录: {}",
+                     cfg.cameraIntervalHours, cfg.cameraRetentionDays, cfg.cameraPhotoDir);
+    }
     spdlog::info("========================================");
 
     // ===== 4. 创建业务组件 =====
@@ -59,9 +69,21 @@ int main(int argc, char* argv[]) {
         storage->start();
     }
 
+    // 相机管理器（OpenCV 定时拍照，每2小时一张，保留1个月）
+    auto camera = std::make_unique<sensor::CameraManager>();
+    camera->init(cfg.cameraPhotoDir,
+                 cfg.cameraIntervalHours,
+                 cfg.cameraRetentionDays,
+                 cfg.cameraDeviceIndex,
+                 cfg.cameraQuality,
+                 cfg.cameraEnabled);
+    if (cfg.cameraEnabled) {
+        camera->start();
+    }
+
     // ===== 5. 创建主窗口 =====
     sensor::MainWindow mainWindow;
-    mainWindow.setup(acquisition.get(), storage.get());
+    mainWindow.setup(acquisition.get(), storage.get(), camera.get());
     mainWindow.show();
 
     spdlog::info("主窗口已显示，等待用户操作...");
@@ -77,6 +99,9 @@ int main(int argc, char* argv[]) {
     }
     if (storage->isRunning()) {
         storage->stop();
+    }
+    if (camera->isEnabled()) {
+        camera->stop();
     }
 
     spdlog::info("程序已正常退出, 退出码={}", ret);

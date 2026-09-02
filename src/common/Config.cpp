@@ -49,6 +49,14 @@ bool Config::loadFromFile(const std::string& path, AppConfig& cfg) {
         cfg.logMaxSize = pt.get<int>("log.max_size", cfg.logMaxSize);
         cfg.logMaxFiles = pt.get<int>("log.max_files", cfg.logMaxFiles);
 
+        // camera
+        cfg.cameraEnabled = pt.get<bool>("camera.enabled", cfg.cameraEnabled);
+        cfg.cameraDeviceIndex = pt.get<int>("camera.device_index", cfg.cameraDeviceIndex);
+        cfg.cameraIntervalHours = pt.get<int>("camera.interval_hours", cfg.cameraIntervalHours);
+        cfg.cameraRetentionDays = pt.get<int>("camera.retention_days", cfg.cameraRetentionDays);
+        cfg.cameraPhotoDir = pt.get<std::string>("camera.photo_dir", cfg.cameraPhotoDir);
+        cfg.cameraQuality = pt.get<int>("camera.quality", cfg.cameraQuality);
+
         return true;
     } catch (const std::exception& e) {
         spdlog::warn("配置文件解析失败，使用默认配置: {}", e.what());

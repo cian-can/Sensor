@@ -75,14 +75,23 @@ else
     NEED_SPDLOG=1
 fi
 
-if [ -n "$NEED_BOOST" ] || [ -n "$NEED_QT6" ] || [ -n "$NEED_SQLITE" ] || [ -n "$NEED_SPDLOG" ]; then
+# 检查 OpenCV
+if pkg-config --exists opencv4 2>/dev/null || [ -f /usr/include/opencv4/opencv2/opencv.hpp ]; then
+    echo "  [OK]   OpenCV (相机拍照)"
+else
+    echo "  [缺失] OpenCV (libopencv-dev)"
+    NEED_OPENCV=1
+fi
+
+if [ -n "$NEED_BOOST" ] || [ -n "$NEED_QT6" ] || [ -n "$NEED_SQLITE" ] || [ -n "$NEED_SPDLOG" ] || [ -n "$NEED_OPENCV" ]; then
     echo ""
     echo "缺少第三方库，请先安装:"
     echo "  sudo apt update && sudo apt install -y \\"
     echo "      libboost-all-dev \\"
     echo "      qt6-base-dev libqt6charts6-dev \\"
     echo "      libsqlite3-dev \\"
-    echo "      libspdlog-dev"
+    echo "      libspdlog-dev \\"
+    echo "      libopencv-dev"
     exit 1
 fi
 
@@ -101,10 +110,10 @@ make -j"$(nproc)"
 echo ""
 echo "=========================================="
 echo " 构建成功!"
-echo " 可执行文件: ${BUILD_DIR}/SensorViz"
+echo " 可执行文件: ${BUILD_DIR}/ForestBreedMonitor"
 echo " 配置文件:   ${BUILD_DIR}/config.ini"
 echo ""
 echo " 运行方式:"
 echo "   cd ${BUILD_DIR}"
-echo "   ./SensorViz"
+echo "   ./ForestBreedMonitor"
 echo "=========================================="
