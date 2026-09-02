@@ -192,7 +192,7 @@ bool CameraManager::openCamera() {
     }
 
     // 尝试默认设备
-    if (capture_.open(0)) {
+    if (capture_.open("http://10.94.159.140:4747/video")) {  // 示例网络摄像头URL
         cameraIndex_ = 0;
         return true;
     }

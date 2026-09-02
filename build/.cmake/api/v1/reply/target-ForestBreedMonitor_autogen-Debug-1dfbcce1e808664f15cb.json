@@ -17,12 +17,12 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "Sensor_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"id" : "ForestBreedMonitor_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "Sensor_autogen::@6890427a1f51a3e7e1df",
+	"id" : "ForestBreedMonitor_autogen::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
-	"name" : "Sensor_autogen",
+	"name" : "ForestBreedMonitor_autogen",
 	"paths" : 
 	{
 		"build" : ".",
@@ -51,19 +51,19 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/Sensor_autogen",
+			"path" : "build/CMakeFiles/ForestBreedMonitor_autogen",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/Sensor_autogen.rule",
+			"path" : "build/CMakeFiles/ForestBreedMonitor_autogen.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Sensor_autogen/timestamp.rule",
+			"path" : "build/ForestBreedMonitor_autogen/timestamp.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

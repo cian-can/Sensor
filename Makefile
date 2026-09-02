@@ -117,74 +117,74 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Sensor
+# Target rules for targets named ForestBreedMonitor
 
 # Build rule for target.
-Sensor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Sensor
-.PHONY : Sensor
+ForestBreedMonitor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ForestBreedMonitor
+.PHONY : ForestBreedMonitor
 
 # fast build rule for target.
-Sensor/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/build
-.PHONY : Sensor/fast
+ForestBreedMonitor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/build
+.PHONY : ForestBreedMonitor/fast
 
 #=============================================================================
-# Target rules for targets named Sensor_autogen_timestamp_deps
+# Target rules for targets named ForestBreedMonitor_autogen_timestamp_deps
 
 # Build rule for target.
-Sensor_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Sensor_autogen_timestamp_deps
-.PHONY : Sensor_autogen_timestamp_deps
+ForestBreedMonitor_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ForestBreedMonitor_autogen_timestamp_deps
+.PHONY : ForestBreedMonitor_autogen_timestamp_deps
 
 # fast build rule for target.
-Sensor_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen_timestamp_deps.dir/build.make CMakeFiles/Sensor_autogen_timestamp_deps.dir/build
-.PHONY : Sensor_autogen_timestamp_deps/fast
+ForestBreedMonitor_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor_autogen_timestamp_deps.dir/build.make CMakeFiles/ForestBreedMonitor_autogen_timestamp_deps.dir/build
+.PHONY : ForestBreedMonitor_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named Sensor_autogen
+# Target rules for targets named ForestBreedMonitor_autogen
 
 # Build rule for target.
-Sensor_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Sensor_autogen
-.PHONY : Sensor_autogen
+ForestBreedMonitor_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ForestBreedMonitor_autogen
+.PHONY : ForestBreedMonitor_autogen
 
 # fast build rule for target.
-Sensor_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor_autogen.dir/build.make CMakeFiles/Sensor_autogen.dir/build
-.PHONY : Sensor_autogen/fast
+ForestBreedMonitor_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor_autogen.dir/build.make CMakeFiles/ForestBreedMonitor_autogen.dir/build
+.PHONY : ForestBreedMonitor_autogen/fast
 
-Sensor_autogen/mocs_compilation.o: Sensor_autogen/mocs_compilation.cpp.o
-.PHONY : Sensor_autogen/mocs_compilation.o
+ForestBreedMonitor_autogen/mocs_compilation.o: ForestBreedMonitor_autogen/mocs_compilation.cpp.o
+.PHONY : ForestBreedMonitor_autogen/mocs_compilation.o
 
 # target to build an object file
-Sensor_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/Sensor_autogen/mocs_compilation.cpp.o
-.PHONY : Sensor_autogen/mocs_compilation.cpp.o
+ForestBreedMonitor_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/ForestBreedMonitor_autogen/mocs_compilation.cpp.o
+.PHONY : ForestBreedMonitor_autogen/mocs_compilation.cpp.o
 
-Sensor_autogen/mocs_compilation.i: Sensor_autogen/mocs_compilation.cpp.i
-.PHONY : Sensor_autogen/mocs_compilation.i
+ForestBreedMonitor_autogen/mocs_compilation.i: ForestBreedMonitor_autogen/mocs_compilation.cpp.i
+.PHONY : ForestBreedMonitor_autogen/mocs_compilation.i
 
 # target to preprocess a source file
-Sensor_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/Sensor_autogen/mocs_compilation.cpp.i
-.PHONY : Sensor_autogen/mocs_compilation.cpp.i
+ForestBreedMonitor_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/ForestBreedMonitor_autogen/mocs_compilation.cpp.i
+.PHONY : ForestBreedMonitor_autogen/mocs_compilation.cpp.i
 
-Sensor_autogen/mocs_compilation.s: Sensor_autogen/mocs_compilation.cpp.s
-.PHONY : Sensor_autogen/mocs_compilation.s
+ForestBreedMonitor_autogen/mocs_compilation.s: ForestBreedMonitor_autogen/mocs_compilation.cpp.s
+.PHONY : ForestBreedMonitor_autogen/mocs_compilation.s
 
 # target to generate assembly for a file
-Sensor_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/Sensor_autogen/mocs_compilation.cpp.s
-.PHONY : Sensor_autogen/mocs_compilation.cpp.s
+ForestBreedMonitor_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/ForestBreedMonitor_autogen/mocs_compilation.cpp.s
+.PHONY : ForestBreedMonitor_autogen/mocs_compilation.cpp.s
 
 src/business/AcquisitionManager.o: src/business/AcquisitionManager.cpp.o
 .PHONY : src/business/AcquisitionManager.o
 
 # target to build an object file
 src/business/AcquisitionManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/business/AcquisitionManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/business/AcquisitionManager.cpp.o
 .PHONY : src/business/AcquisitionManager.cpp.o
 
 src/business/AcquisitionManager.i: src/business/AcquisitionManager.cpp.i
@@ -192,7 +192,7 @@ src/business/AcquisitionManager.i: src/business/AcquisitionManager.cpp.i
 
 # target to preprocess a source file
 src/business/AcquisitionManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/business/AcquisitionManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/business/AcquisitionManager.cpp.i
 .PHONY : src/business/AcquisitionManager.cpp.i
 
 src/business/AcquisitionManager.s: src/business/AcquisitionManager.cpp.s
@@ -200,7 +200,7 @@ src/business/AcquisitionManager.s: src/business/AcquisitionManager.cpp.s
 
 # target to generate assembly for a file
 src/business/AcquisitionManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/business/AcquisitionManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/business/AcquisitionManager.cpp.s
 .PHONY : src/business/AcquisitionManager.cpp.s
 
 src/business/DataProcessor.o: src/business/DataProcessor.cpp.o
@@ -208,7 +208,7 @@ src/business/DataProcessor.o: src/business/DataProcessor.cpp.o
 
 # target to build an object file
 src/business/DataProcessor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/business/DataProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/business/DataProcessor.cpp.o
 .PHONY : src/business/DataProcessor.cpp.o
 
 src/business/DataProcessor.i: src/business/DataProcessor.cpp.i
@@ -216,7 +216,7 @@ src/business/DataProcessor.i: src/business/DataProcessor.cpp.i
 
 # target to preprocess a source file
 src/business/DataProcessor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/business/DataProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/business/DataProcessor.cpp.i
 .PHONY : src/business/DataProcessor.cpp.i
 
 src/business/DataProcessor.s: src/business/DataProcessor.cpp.s
@@ -224,15 +224,39 @@ src/business/DataProcessor.s: src/business/DataProcessor.cpp.s
 
 # target to generate assembly for a file
 src/business/DataProcessor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/business/DataProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/business/DataProcessor.cpp.s
 .PHONY : src/business/DataProcessor.cpp.s
+
+src/camera/CameraManager.o: src/camera/CameraManager.cpp.o
+.PHONY : src/camera/CameraManager.o
+
+# target to build an object file
+src/camera/CameraManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/camera/CameraManager.cpp.o
+.PHONY : src/camera/CameraManager.cpp.o
+
+src/camera/CameraManager.i: src/camera/CameraManager.cpp.i
+.PHONY : src/camera/CameraManager.i
+
+# target to preprocess a source file
+src/camera/CameraManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/camera/CameraManager.cpp.i
+.PHONY : src/camera/CameraManager.cpp.i
+
+src/camera/CameraManager.s: src/camera/CameraManager.cpp.s
+.PHONY : src/camera/CameraManager.s
+
+# target to generate assembly for a file
+src/camera/CameraManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/camera/CameraManager.cpp.s
+.PHONY : src/camera/CameraManager.cpp.s
 
 src/common/Config.o: src/common/Config.cpp.o
 .PHONY : src/common/Config.o
 
 # target to build an object file
 src/common/Config.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/common/Config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/common/Config.cpp.o
 .PHONY : src/common/Config.cpp.o
 
 src/common/Config.i: src/common/Config.cpp.i
@@ -240,7 +264,7 @@ src/common/Config.i: src/common/Config.cpp.i
 
 # target to preprocess a source file
 src/common/Config.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/common/Config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/common/Config.cpp.i
 .PHONY : src/common/Config.cpp.i
 
 src/common/Config.s: src/common/Config.cpp.s
@@ -248,7 +272,7 @@ src/common/Config.s: src/common/Config.cpp.s
 
 # target to generate assembly for a file
 src/common/Config.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/common/Config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/common/Config.cpp.s
 .PHONY : src/common/Config.cpp.s
 
 src/common/Logger.o: src/common/Logger.cpp.o
@@ -256,7 +280,7 @@ src/common/Logger.o: src/common/Logger.cpp.o
 
 # target to build an object file
 src/common/Logger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/common/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/common/Logger.cpp.o
 .PHONY : src/common/Logger.cpp.o
 
 src/common/Logger.i: src/common/Logger.cpp.i
@@ -264,7 +288,7 @@ src/common/Logger.i: src/common/Logger.cpp.i
 
 # target to preprocess a source file
 src/common/Logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/common/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/common/Logger.cpp.i
 .PHONY : src/common/Logger.cpp.i
 
 src/common/Logger.s: src/common/Logger.cpp.s
@@ -272,7 +296,7 @@ src/common/Logger.s: src/common/Logger.cpp.s
 
 # target to generate assembly for a file
 src/common/Logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/common/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/common/Logger.cpp.s
 .PHONY : src/common/Logger.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -280,7 +304,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -288,7 +312,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -296,7 +320,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/net/MockServer.o: src/net/MockServer.cpp.o
@@ -304,7 +328,7 @@ src/net/MockServer.o: src/net/MockServer.cpp.o
 
 # target to build an object file
 src/net/MockServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/net/MockServer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/net/MockServer.cpp.o
 .PHONY : src/net/MockServer.cpp.o
 
 src/net/MockServer.i: src/net/MockServer.cpp.i
@@ -312,7 +336,7 @@ src/net/MockServer.i: src/net/MockServer.cpp.i
 
 # target to preprocess a source file
 src/net/MockServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/net/MockServer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/net/MockServer.cpp.i
 .PHONY : src/net/MockServer.cpp.i
 
 src/net/MockServer.s: src/net/MockServer.cpp.s
@@ -320,7 +344,7 @@ src/net/MockServer.s: src/net/MockServer.cpp.s
 
 # target to generate assembly for a file
 src/net/MockServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/net/MockServer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/net/MockServer.cpp.s
 .PHONY : src/net/MockServer.cpp.s
 
 src/net/TcpClient.o: src/net/TcpClient.cpp.o
@@ -328,7 +352,7 @@ src/net/TcpClient.o: src/net/TcpClient.cpp.o
 
 # target to build an object file
 src/net/TcpClient.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/net/TcpClient.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/net/TcpClient.cpp.o
 .PHONY : src/net/TcpClient.cpp.o
 
 src/net/TcpClient.i: src/net/TcpClient.cpp.i
@@ -336,7 +360,7 @@ src/net/TcpClient.i: src/net/TcpClient.cpp.i
 
 # target to preprocess a source file
 src/net/TcpClient.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/net/TcpClient.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/net/TcpClient.cpp.i
 .PHONY : src/net/TcpClient.cpp.i
 
 src/net/TcpClient.s: src/net/TcpClient.cpp.s
@@ -344,7 +368,7 @@ src/net/TcpClient.s: src/net/TcpClient.cpp.s
 
 # target to generate assembly for a file
 src/net/TcpClient.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/net/TcpClient.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/net/TcpClient.cpp.s
 .PHONY : src/net/TcpClient.cpp.s
 
 src/protocol/FrameCodec.o: src/protocol/FrameCodec.cpp.o
@@ -352,7 +376,7 @@ src/protocol/FrameCodec.o: src/protocol/FrameCodec.cpp.o
 
 # target to build an object file
 src/protocol/FrameCodec.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/protocol/FrameCodec.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/protocol/FrameCodec.cpp.o
 .PHONY : src/protocol/FrameCodec.cpp.o
 
 src/protocol/FrameCodec.i: src/protocol/FrameCodec.cpp.i
@@ -360,7 +384,7 @@ src/protocol/FrameCodec.i: src/protocol/FrameCodec.cpp.i
 
 # target to preprocess a source file
 src/protocol/FrameCodec.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/protocol/FrameCodec.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/protocol/FrameCodec.cpp.i
 .PHONY : src/protocol/FrameCodec.cpp.i
 
 src/protocol/FrameCodec.s: src/protocol/FrameCodec.cpp.s
@@ -368,7 +392,7 @@ src/protocol/FrameCodec.s: src/protocol/FrameCodec.cpp.s
 
 # target to generate assembly for a file
 src/protocol/FrameCodec.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/protocol/FrameCodec.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/protocol/FrameCodec.cpp.s
 .PHONY : src/protocol/FrameCodec.cpp.s
 
 src/storage/SqliteStorage.o: src/storage/SqliteStorage.cpp.o
@@ -376,7 +400,7 @@ src/storage/SqliteStorage.o: src/storage/SqliteStorage.cpp.o
 
 # target to build an object file
 src/storage/SqliteStorage.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/storage/SqliteStorage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/storage/SqliteStorage.cpp.o
 .PHONY : src/storage/SqliteStorage.cpp.o
 
 src/storage/SqliteStorage.i: src/storage/SqliteStorage.cpp.i
@@ -384,7 +408,7 @@ src/storage/SqliteStorage.i: src/storage/SqliteStorage.cpp.i
 
 # target to preprocess a source file
 src/storage/SqliteStorage.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/storage/SqliteStorage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/storage/SqliteStorage.cpp.i
 .PHONY : src/storage/SqliteStorage.cpp.i
 
 src/storage/SqliteStorage.s: src/storage/SqliteStorage.cpp.s
@@ -392,7 +416,7 @@ src/storage/SqliteStorage.s: src/storage/SqliteStorage.cpp.s
 
 # target to generate assembly for a file
 src/storage/SqliteStorage.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/storage/SqliteStorage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/storage/SqliteStorage.cpp.s
 .PHONY : src/storage/SqliteStorage.cpp.s
 
 src/ui/MainWindow.o: src/ui/MainWindow.cpp.o
@@ -400,7 +424,7 @@ src/ui/MainWindow.o: src/ui/MainWindow.cpp.o
 
 # target to build an object file
 src/ui/MainWindow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/ui/MainWindow.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/ui/MainWindow.cpp.o
 .PHONY : src/ui/MainWindow.cpp.o
 
 src/ui/MainWindow.i: src/ui/MainWindow.cpp.i
@@ -408,7 +432,7 @@ src/ui/MainWindow.i: src/ui/MainWindow.cpp.i
 
 # target to preprocess a source file
 src/ui/MainWindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/ui/MainWindow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/ui/MainWindow.cpp.i
 .PHONY : src/ui/MainWindow.cpp.i
 
 src/ui/MainWindow.s: src/ui/MainWindow.cpp.s
@@ -416,7 +440,7 @@ src/ui/MainWindow.s: src/ui/MainWindow.cpp.s
 
 # target to generate assembly for a file
 src/ui/MainWindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sensor.dir/build.make CMakeFiles/Sensor.dir/src/ui/MainWindow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ForestBreedMonitor.dir/build.make CMakeFiles/ForestBreedMonitor.dir/src/ui/MainWindow.cpp.s
 .PHONY : src/ui/MainWindow.cpp.s
 
 # Help Target
@@ -427,18 +451,21 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Sensor_autogen"
-	@echo "... Sensor_autogen_timestamp_deps"
-	@echo "... Sensor"
-	@echo "... Sensor_autogen/mocs_compilation.o"
-	@echo "... Sensor_autogen/mocs_compilation.i"
-	@echo "... Sensor_autogen/mocs_compilation.s"
+	@echo "... ForestBreedMonitor_autogen"
+	@echo "... ForestBreedMonitor_autogen_timestamp_deps"
+	@echo "... ForestBreedMonitor"
+	@echo "... ForestBreedMonitor_autogen/mocs_compilation.o"
+	@echo "... ForestBreedMonitor_autogen/mocs_compilation.i"
+	@echo "... ForestBreedMonitor_autogen/mocs_compilation.s"
 	@echo "... src/business/AcquisitionManager.o"
 	@echo "... src/business/AcquisitionManager.i"
 	@echo "... src/business/AcquisitionManager.s"
 	@echo "... src/business/DataProcessor.o"
 	@echo "... src/business/DataProcessor.i"
 	@echo "... src/business/DataProcessor.s"
+	@echo "... src/camera/CameraManager.o"
+	@echo "... src/camera/CameraManager.i"
+	@echo "... src/camera/CameraManager.s"
 	@echo "... src/common/Config.o"
 	@echo "... src/common/Config.i"
 	@echo "... src/common/Config.s"

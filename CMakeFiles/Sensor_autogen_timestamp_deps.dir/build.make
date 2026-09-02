@@ -68,9 +68,9 @@ include CMakeFiles/Sensor_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
-CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Charts.so.6.4.2
 CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libsqlite3.so
+CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Charts.so.6.4.2
 CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.12.0
 CMakeFiles/Sensor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
 
